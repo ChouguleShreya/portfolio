@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: white;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: lavender;
+    }
+    header {
+      text-align: center;
+      background: grey;
+      color: white;
+      padding: 20px 0;
+      border-radius: 10px;
+    }
+    section {
+      margin: 20px 0;
+    }
+    h2 {
+      color: darkViolet;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ISE 1 Styles */
+    .ise1-header {
+      background: darkgreen;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    .ise1-section {
+      background: lightgreen;
+      padding: 20px;
+      border-radius: 10px;
+      color: #333;
+    }
+    .ise1-section h2 {
+      color: indigo;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 5px;
+    }
+    .ise1-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .ise1-section li {
+      background: white;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Clock Styling */
+    .clock {
+      color: violet;
+      font-size: 4rem;
+      background-color: black;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    /* Upload area */
+    .upload-area {
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      text-align: center;
+      border: 2px dashed #999;
+      border-radius: 10px;
+      background: white;
+      transition: 0.3s;
+      display: none;
+      margin-top: 20px;
+    }
+    .upload-area.dragover {
+      border-color: white;
+      background-color: black;
+    }
+    #browseBtn {
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    #fileInfo {
+      margin-top: 15px;
+      font-size: 14px;
+      color: white;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: darkViolet;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: green;
+    }
+
+    /* In Sem Exam Section */
+    #insem h2 {
+      font-size: 24px;
+      color: darkViolet; /* same as My Hobbies */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Shreya Chougule</h1>
+    </header>
+
+    <section id="academics">
+      <h2>Academic Skills & Projects</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Built a personal portfolio website</li>
+        <li>Mini project on Simple voting system in Python</li>
+      </ul>
+    </section>
+
+    <section id="subjects">
+      <h2>Learned Subjects</h2>
+      <ul>
+        <li>Cloud Computing</li> 
+        <li>Software Engineering</li> 
+        <li>Machine Learning</li> 
+        <li>Java basics</li> 
+        <li>Programming with Python</li>
+      </ul>
+    </section>
+
+    <section id="media">
+      <h2>Certificates</h2>
+      <div class="gallery">
+        <li>Participation:
+          <p>1.5-days ROBOTICS WORKSHOP</p>
+          <p>2. WITCHAR: Quizotronics, AptiBattle</p>
+          <p>3. Youa Darpan: Youth parliament</p>
+        </li>
+        <li>Courses:
+          <p>1. Programming in C, OOPS in C++ (Infosys Springboard)</p>
+          <p>2. Basics of Python (Infosys Springboard)</p>
+          <p>3. Generative AI and Python (GUVI)</p>
+        </li>
+        <li>Personality Development:
+          <p>1. Personality Development</p>
+          <p>2. Design Thinking</p>
+          <p>3. Write Professional Emails</p>
+        </li>
+      </div>
+    </section>
+
+    <section id="hobbies">
+      <h2>My Hobbies</h2>
+      <p>I enjoy Sketching, coding, reading books and playing badminton.</p>
+    </section>
+
+    <!-- New Section About In Sem Exam -->
+    <section id="insem">
+      <h2>About In Sem Exam</h2>
+    </section>
+
+    <section class="button-group">
+      <button onclick="showISE(1)">ISE 1: Restaurant Menu</button>
+      <button onclick="showISE(2)">ISE 2: Digital Clock Updating Every Second</button>
+      <button onclick="showISE(3)">ISE 3: Drag & Drop File Uploader</button>
+    </section>
+
+    <!-- ISE 1 Content -->
+    <div id="ise1" style="display:none">
+      <div class="ise1-header"><h1>Veggian - Vegetarian Restaurant</h1></div>
+      <div class="ise1-section">
+        <h2>Starters</h2>
+        <ul>
+          <li>Tomato Soup - ₹60</li>
+          <li>Masala Papad - ₹40</li>
+        </ul>
+        <h2>Main Course</h2>
+        <ul>
+          <li>Veg Biryani - ₹120</li>
+          <li>Paneer Tikka Masala - ₹150</li>
+          <li>Veg Manchurian - ₹130</li>
+          <li>Veg Hakka Noodles - ₹110</li>
+          <li>Veg Pasta - ₹140</li>
+        </ul>
+        <h2>Sweet Dish</h2>
+        <ul>
+          <li>Gulab Jamun - ₹50</li>
+        </ul>
+        <h2>Drinks</h2>
+        <ul>
+          <li>Milkshake - ₹70</li>
+          <li>Fresh Lime Soda - ₹40</li>
+          <li>Mango Lassi - ₹60</li>
+          <li>Cold Coffee - ₹80</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ISE 2 Clock -->
+    <div class="clock" id="clock">00:00:00</div>
+
+    <!-- ISE 3 Uploader -->
+    <div class="upload-area" id="upload-area">
+      <p>Drag & Drop your file here or <span id="browseBtn">Browse</span></p>
+      <input type="file" id="fileInput" hidden>
+      <div id="fileInfo"></div>
+    </div>
+  </div>
+
+  <script>
+    function showISE(n) {
+      document.getElementById('ise1').style.display = 'none';
+      document.getElementById('clock').style.display = 'none';
+      document.getElementById('upload-area').style.display = 'none';
+
+      if (n === 1) {
+        document.getElementById('ise1').style.display = 'block';
+      } else if (n === 2) {
+        document.getElementById('clock').style.display = 'block';
+      } else if (n === 3) {
+        document.getElementById('upload-area').style.display = 'block';
+      }
+    }
+
+    // Clock functionality
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = ${hours}:${minutes}:${seconds};
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Drag & Drop file handling
+    const uploadArea = document.getElementById('upload-area');
+    const fileInput = document.getElementById('fileInput');
+    const browseBtn = document.getElementById('browseBtn');
+    const fileInfo = document.getElementById('fileInfo');
+    const allowedTypes = ['image/jpeg', 'image/png'];
+
+    browseBtn.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', (e) => {
+      handleFiles(e.target.files);
+    });
+
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('dragover');
+      handleFiles(e.dataTransfer.files);
+    });
+
+    function handleFiles(files) {
+      if (files.length === 0) return;
+      const file = files[0];
+      if (!allowedTypes.includes(file.type)) {
+        fileInfo.textContent = ❌ Invalid file type: ${file.name};
+        fileInfo.style.color = 'red';
+        return;
+      }
+      fileInfo.textContent = ✅ File uploaded: ${file.name};
+      fileInfo.style.color = 'green';
+    }
+  </script>
+</body>
+</html>
